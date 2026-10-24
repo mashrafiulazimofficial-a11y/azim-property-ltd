@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azim Property Ltd. | Building Your Dreams Into Reality</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent-gold: #d97706;
+      --gold-light: #fef3c7;
+      --gold-hover: #b45309;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Hind Siliguri', 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: var(--primary);
+      color: #94a3b8;
+      font-size: 0.875rem;
+      padding: 8px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .top-info span {
+      margin-right: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-info i {
+      color: var(--accent-gold);
+    }
+
+    /* Header Navigation */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--accent-gold);
+      border: 2px solid var(--accent-gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .logo-text h1 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .logo-text span {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      letter-spacing: 2px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .btn-gold {
+      background-color: var(--accent-gold);
+      color: var(--white) !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 100px 5% 120px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      background-color: rgba(217, 119, 6, 0.2);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: var(--radius);
+    }
+
+    .stat-card h3 {
+      font-size: 2.2rem;
+      color: var(--accent-gold);
+      font-weight: 800;
+    }
+
+    .stat-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #94a3b8;
+    }
+
+    /* Container Standard */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 80px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    /* Founder & Leadership Section */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 50px;
+      align-items: center;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .founder-image-wrapper {
+      position: relative;
+    }
+
+    .founder-img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+    }
+
+    .founder-badge {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px 25px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: var(--shadow);
+    }
+
+    .founder-badge strong {
+      display: block;
+      color: var(--accent-gold);
+      font-size: 1.1rem;
+    }
+
+    .founder-info h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .founder-title {
+      color: var(--accent-gold);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .roles-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .roles-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+
+    .roles-list i {
+      color: var(--accent-gold);
+      margin-top: 4px;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-img-box {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background-color: #f1f5f9;
+    }
+
+    .project-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--accent-gold);
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    .project-details {
+      padding: 25px;
+    }
+
+    .project-details h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .project-location {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .feature-tag {
+      background-color: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--text-dark);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Media & Community Section */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .media-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .media-content {
+      padding: 20px;
+    }
+
+    .media-date {
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .media-content h4 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .media-content p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Contact & Booking Form */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .contact-info-panel {
+      background: var(--primary);
+      color: var(--white);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-info-panel h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--white);
+    }
+
+    .contact-details-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .contact-details-item i {
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+
+    .contact-form-panel {
+      padding: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-gold);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: #94a3b8;
+      padding: 60px 5% 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1300px;
+      margin: 0 auto 40px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--accent-gold);
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      transition: color 0.3s ease;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .founder-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .hero h2 {
+        font-size: 2.1rem;
+      }
+      .nav-links {
+        display: none; /* Can be enhanced with mobile menu */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div class="top-info">
+      <span><i class="fa-solid fa-location-dot"></i> বাঁকালিয়া অ্যাক্সেস রোড, চট্টগ্রাম</span>
+      <span><i class="fa-solid fa-envelope"></i> contact@azimpropertyltd.com</span>
+    </div>
+    <div class="top-info">
+      <span><i class="fa-solid fa-clock"></i> শনি - বৃহঃ: ১০:০০ AM - ৮:০০ PM</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="logo-badge">APL</div>
+        <div class="logo-text">
+          <h1>AZIM PROPERTY LTD.</h1>
+          <span>SINCE 2006</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">হোম</a></li>
+        <li><a href="#about">আমাদের কথা</a></li>
+        <li><a href="#leadership">প্রতিষ্ঠাতা ও পরিচিতি</a></li>
+        <li><a href="#projects">প্রজেক্টসমূহ</a></li>
+        <li><a href="#media">খবর ও ইভেন্ট</a></li>
+        <li><a href="#contact">যোগাযোগ</a></li>
+      </ul>
+      <a href="#contact" class="btn-gold"><i class="fa-solid fa-key"></i> বুকিং দিন</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-tag">আস্থা ও বিশ্বাসের ১৭+ বছর</span>
+      <h2>Building Your Dreams Into Reality</h2>
+      <p>চট্টগ্রামের প্রাণকেন্দ্রে আধুনিক, নিরাপদ এবং লাক্সারি আবাসন ও কমার্শিয়াল স্পেস নির্মাণের নির্ভরযোগ্য নাম — আজিম প্রপার্টিজ লিমিটেড।</p>
+      <div style="display: flex; gap: 15px; justify-content: center;">
+        <a href="#projects" class="btn-gold"><i class="fa-solid fa-building"></i> প্রজেক্ট দেখুন</a>
+        <a href="#contact" class="btn-gold" style="background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold) !important;"><i class="fa-solid fa-phone"></i> সরাসরি যোগাযোগ</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <h3>১৭ তলা</h3>
+          <p>Azim Tower (লাক্সারি রেসিডেন্সিয়াল)</p>
+        </div>
+        <div class="stat-card">
+          <h3>১৬ তলা</h3>
+          <p>Azim Market (কমার্শিয়াল ও রেসিডেন্সিয়াল)</p>
+        </div>
+        <div class="stat-card">
+          <h3>২০০৬</h3>
+          <p>সাফল্য ও সুনামের সাথে যাত্রা শুরু</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder & Leadership Section -->
+  <section class="container" id="leadership">
+    <div class="section-title">
+      <span>আমাদের নেতৃত্ব</span>
+      <h2>ব্যবস্থাপনা ও অংশীদারিত্ব</h2>
+    </div>
+
+    <div class="founder-grid">
+      <div class="founder-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Md. Rezaul Azim CIP" class="founder-img">
+        <div class="founder-badge">
+          <strong>মোঃ রেজাউল আজিম (CIP)</strong>
+          <span>চেয়ারম্যান, আজিম প্রপার্টিজ লিঃ</span>
+        </div>
+      </div>
+      <div class="founder-info">
+        <h3>মোঃ রেজাউল আজিম (CIP)</h3>
+        <span class="founder-title">ব্যবসায়ী, সমাজসেবক ও শিল্প উদ্যোক্তা</span>
+        <p>বিগত প্রায় দুই দশক ধরে আবাসন, বাণিজ্যিক প্রতিষ্ঠান নির্মাণ এবং চট্টগ্রামে আধুনিক নগর উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রেখে আসছেন। সততা ও দক্ষতার সাথে ব্যবসায়িক সাফল্যের পাশাপাশি সামাজিক উন্নয়নমূলক কর্মকাণ্ডে তিনি সদা অগ্রগামী।</p>
+
+        <ul class="roles-list">
+          <li><i class="fa-solid fa-circle-check"></i> <strong>চেয়ারম্যান:</strong> আজিম প্রপার্টিজ লিমিটেড (Azim Property Ltd.)</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>যৌথ মালিক (Joint Owner):</strong> আফমি প্লাজা (AFMI Plaza - চট্টগ্রামের বিখ্যাত শপিং মল)</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>যৌথ মালিক:</strong> বসুধা বিল্ডার্স লিমিটেড (Basudha Builders Ltd.)</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>যৌথ মালিক ও অর্থ সম্পাদক (CIP):</strong> হোটেল দ্য কক্স টুডে (Hotel The Cox Today)</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>অর্থ সম্পাদক:</strong> Hotel The Cox Today Suite Owners' Liaison Committee (চট্টগ্রাম জোন)</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>সহ-সভাপতি পদপ্রার্থী:</strong> বৃহত্তর রাহাত্তারপুল মহল্লা কমিটি ("আম" মার্কা)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="container" id="projects" style="background-color: var(--white); border-radius: var(--radius); margin-top: 40px; margin-bottom: 40px;">
+    <div class="section-title">
+      <span>আমাদের ফ্ল্যাগশিপ প্রজেক্টসমূহ</span>
+      <h2>আধুনিক স্থাপত্য ও ব্যবসায়িক কেন্দ্র</h2>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Azim Tower -->
+      <div class="project-card">
+        <div class="project-img-box">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Azim Tower">
+          <span class="project-status">কাজ দ্রুত গতিতে চলমান</span>
+        </div>
+        <div class="project-details">
+          <h3>AZIM TOWER</h3>
+          <div class="project-location"><i class="fa-solid fa-location-dot"></i> আজিম লেন, বাকালিয়া অ্যাক্সেস রোড, চট্টগ্রাম</div>
+          <p>১৭ তলা বিশিষ্ট প্রিমিয়াম লাক্সারি রেসিডেন্সিয়াল কমপ্লেক্স। আধুনিক নাগরিক জীবনের সকল সুবিধা নিয়ে তৈরি।</p>
+          <div class="project-features" style="margin-top: 15px;">
+            <span class="feature-tag">১৮৪০ স্কয়ার ফিট ফ্ল্যাট</span>
+            <span class="feature-tag">৩ বেডরুম ও ৩ বাথরুম</span>
+            <span class="feature-tag">ডাবল হাইট এন্ট্রেন্স</span>
+            <span class="feature-tag">জিম ও কমিউনিটি হল</span>
+            <span class="feature-tag">নামাজের স্থান</span>
+          </div>
+          <a href="#contact" class="btn-gold" style="width: 100%; text-align: center; justify-content: center;">বুকিংয়ের জন্য যোগাযোগ করুন</a>
+        </div>
+      </div>
+
+      <!-- Azim Market -->
+      <div class="project-card">
+        <div class="project-img-box">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Azim Market">
+          <span class="project-status">১৬ তলা প্রস্তাবিত ল্যান্ডমার্ক</span>
+        </div>
+        <div class="project-details">
+          <h3>AZIM MARKET</h3>
+          <div class="project-location"><i class="fa-solid fa-location-dot"></i> বাকালিয়া অ্যাক্সেস রোড, চট্টগ্রাম</div>
+          <p>বাণিজ্যিক ও আবাসিক সমন্বয়ে গঠিত ১৬ তলা বিশিষ্ট আধুনিক ল্যান্ডমার্ক মল। এখানে রয়েছে নামীদামী ব্র্যান্ডের দোকান।</p>
+          <div class="project-features" style="margin-top: 15px;">
+            <span class="feature-tag">CP Five Star</span>
+            <span class="feature-tag">Walton Showroom</span>
+            <span class="feature-tag">London Bakery</span>
+            <span class="feature-tag">Sizzle Restaurant</span>
+            <span class="feature-tag">Juice Bank</span>
+          </div>
+          <a href="#contact" class="btn-gold" style="width: 100%; text-align: center; justify-content: center;">স্পেস বুক করুন</a>
+        </div>
+      </div
